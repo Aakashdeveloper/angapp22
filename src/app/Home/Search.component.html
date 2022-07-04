@@ -1,29 +1,33 @@
 <div id="search">
     <div id="logo">
-        <span>E!</span>
+        <span>D!</span>
     </div>
     <div id="heading">
         {{title}}
     </div>
-    <div class="dropdown">
+   
+    
+    <div id="dropdown">
         <select (change)="handleCity($event)">
-            <option value="default">----SELECT YOUR CITY-----</option>
-            <option *ngFor="let loc of locations" [value]="loc.state_id">
-                    {{loc.state}}
+            <option value="default">--SELECT YOUR CITY--</option>
+            <option *ngFor="let loc of locationData" [value]="loc.state_id">
+                {{loc.state}}
             </option>
         </select>
-        <select class="restSelect">
-            <option>----SELECT YOUR Restaurants-----</option>
+        <select id="restaurants">
+            <option value="default">--SELECT YOUR Restaurants--</option>
             <option *ngFor="let rest of restaurants" [value]="rest.restaurant_id">
-                {{rest.restaurant_name}} - {{rest.address}}
-        </option>
+                {{rest.restaurant_name}}-{{rest.address}}
+            </option>
         </select>
     </div>
 </div>
 
-   <!--<input type="text" [value]="textVal"/>
-        <img src=""/>
+
+<!-- <div style="font-size:30px">
+    <input [(ngModel)]="userText"/>
+    <p style="color:white;">
+        {{userText}}
+    </p>
     
-    <option value="1">Delhi</option>
-    <option value="2">Mumbai</option>
-    -->
+</div> -->

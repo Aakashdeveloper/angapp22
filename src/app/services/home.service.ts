@@ -1,17 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ICity } from '../Home/location.model';
-import { IRest } from '../Home/rest.model';
-import { IMeal } from '../Home/meal.model';
+import {Observable} from 'rxjs';
+import {ICity} from '../home/location.model';
+import {IRest} from '../home/rest.model';
+import {IMeal} from '../home/quick.model';
 
 @Injectable()
 
-export class HomeService {
-
+export class HomeService{
     private cityUrl = "https://zomatoajulypi.herokuapp.com/location";
-    private restUrl = "https://zomatoajulypi.herokuapp.com/restaurant?stateId="
-    private mealUrl = "https://zomatoajulypi.herokuapp.com/quicksearch"
+    private restUrl = "https://zomatoajulypi.herokuapp.com/restaurant";
+    private quickUrl = "https://zomatoajulypi.herokuapp.com/quicksearch";
 
     constructor(private http:HttpClient){}
 
@@ -19,12 +18,12 @@ export class HomeService {
         return this.http.get<ICity[]>(this.cityUrl)
     }
 
-    getMeals(): Observable<IMeal[]>{
-        return this.http.get<IMeal[]>(this.mealUrl)
+    getRestaurants(stateId:number):Observable<IRest[]>{
+        return this.http.get<IRest[]>(`${this.restUrl}?stateId=${stateId}`)
     }
 
-    getRwrtC(stateId:number): Observable<IRest[]>{
-        return this.http.get<IRest[]>(`${this.restUrl}${stateId}`)
+    getMeal(): Observable<IMeal[]>{
+        return this.http.get<IMeal[]>(this.quickUrl)
     }
-
 }
+

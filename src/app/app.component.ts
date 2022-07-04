@@ -2,11 +2,10 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
-   // template: `<h1>Hii Form Developer Funnel</h1>`
-   templateUrl: './app.component.html',
-   styleUrls: ['./app.component.css']
+    //template: `<h1>Hi From Developer Funnel App</h1>`
+    templateUrl:'./app.component.html'
 })
 
-export class AppComponent {
-    title = 'Xomato'
+export class AppComponent{
+
 }

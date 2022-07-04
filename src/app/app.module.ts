@@ -1,49 +1,38 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeModule } from './Home/home.module';
-import { ListingModule } from './Listing/listing.module';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './Header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { DetailsModule } from './details/details.module';
-import { OrderService } from './services/order.service';
-import { OrderComponent } from './booking/booking.component';
-import { ViewOrderComponent } from './viewOrders/viewOrder.component';
-
+import { HeaderComponent } from './headers/header.component';
+import { FooterComponent } from './footer/footer.component'
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './home/home.module';
+import { ListingModule } from './lisiting/listing.module';
+import { DetailModule } from './details/details.modules';
+//decorator
 @NgModule({
-    // All the component & pipe
+    // ALl the components & pipe 
     declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent,
-        OrderComponent,
-        ViewOrderComponent
+        FooterComponent
     ],
-
-    // All the module will declare here
+    // all the modules
     imports: [
         BrowserModule,
-        AppRoutingModule,
         HttpClientModule,
         FormsModule,
+        AppRoutingModule,
         HomeModule,
         ListingModule,
-        DetailsModule
+        DetailModule
     ],
-
-    // All the services will declare here
-    providers: [
-        OrderService
-    ],
-
-    // Only and only one component(main Component)
-    bootstrap: [
+    // All services
+    providers: [],
+    // only and only main components
+    bootstrap:[
         AppComponent
     ]
 })
 
-export class AppModule {}
+export class AppModule{}

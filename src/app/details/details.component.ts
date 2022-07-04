@@ -1,24 +1,24 @@
-import {Component, OnInit} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { DetailsService } from '../services/details.service';
-import {IRest} from '../Home/rest.model';
+import {IRest} from '../home/rest.model';
+import {DetailsService} from '../services/details.service';
 
 @Component({
-    templateUrl:'./details.component.html',
-    styleUrls:['./details.component.css']
+    templateUrl: './details.component.html',
+    styleUrls: ['./details.component.css']
 })
 
-export class DetailsComponent implements OnInit{
+export class DetailsComponent implements OnInit {
     id: number = 0;
-    details: IRest[] = []
+    details: IRest[] = [];
+    mealId: string|null = sessionStorage.getItem('mealId')
 
-    constructor(private route: ActivatedRoute,
-        private detailsService: DetailsService){}
+    constructor( private route:ActivatedRoute,
+                 private detailsService: DetailsService){}
 
-    ngOnInit(): void {
+    ngOnInit():void{
         this.id = Number(this.route.snapshot.queryParamMap.get('restId'))
         this.detailsService.getDetails(this.id)
-        .subscribe((data:IRest[]) => this.details = data)
-  
+            .subscribe((data:IRest[]) => this.details = data)
     }
 }

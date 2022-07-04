@@ -1,20 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {HomeComponent} from './Home/Home.component';
-import {ListingComponent} from './Listing/listing.component';
-import {DetailsComponent} from './details/details.component';
-import { OrderComponent } from './booking/booking.component';
-import { ViewOrderComponent } from './viewOrders/viewOrder.component';
-
+import {HomeComponent} from './home/Home.component';
+import {ListingComponent} from './lisiting/listing.component';
+import {DetailsComponent} from './details/details.component'
 
 const routes: Routes = [
-    {path:'viewOrder',component:ViewOrderComponent},
-    {path:'order',component:OrderComponent},
     {path:'details',component: DetailsComponent},
     {path:'listing/:id',component: ListingComponent},
     {path:'home',component: HomeComponent},
-    {path:'',component: HomeComponent},
-   
+    {path:'',component: HomeComponent}
 ]
 
 @NgModule({
@@ -23,4 +17,4 @@ const routes: Routes = [
     exports:[RouterModule]
 })
 
-export class AppRoutingModule{}
+export class AppRoutingModule {}

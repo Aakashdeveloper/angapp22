@@ -4,22 +4,21 @@ export interface IRest{
     restaurant_name: string,
     location_id: number,
     state_id: number,
-    address: string,
     restaurant_thumb: string,
     average_rating: number,
     rating_text: string,
     cost: number,
-    contact_number: string,
+    address: string,
     mealTypes: IMealType[],
     cuisines: ICuisineType[],
     image_gallery: string[]
 }
 
-
 export interface IMealType{
     mealtype_id: number,
     mealtype_name: string
 }
+
 export interface ICuisineType{
     cuisine_id: number,
     cuisine_name: string

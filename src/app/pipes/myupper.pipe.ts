@@ -1,15 +1,15 @@
-import {Pipe, PipeTransform }  from '@angular/core';
+import {Pipe,PipeTransform} from '@angular/core';
 
 @Pipe({
-    name:'myupper'
+    name:'MyUpper'
 })
 
 export class MyUpperPipe implements PipeTransform {
-    transform(value: string, kindOf:string): string {
-        if(kindOf === 'lower'){
-            value = value.toLowerCase()
+    transform(value: string, kindOf: string): string {
+        if(kindOf == 'Upper'){
+            value = value.toUpperCase();
         }else{
-            value = value.toUpperCase()
+            value = value.charAt(0).toUpperCase()+value.slice(1).toLowerCase()
         }
         return value
     }

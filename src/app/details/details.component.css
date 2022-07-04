@@ -1,33 +1,29 @@
-
-.contentDiv{
+#mainContent{
     height:600px;
-    width:80%;
-    margin-left: 10%;
-    display: inline-block;
+    width:85%;
+    margin-left: 8%;
+    margin-top: 2%;
 }
 
 .imgDiv{
-    height:450px;
+    height:500px;
     width:45%;
-    float: left;
-    border:8px groove gray;
-    margin-top: 5%;
+    float:left;
+    border:5px groove gray;
+    box-shadow: 10px 20px 10px gray;
+    
 }
 
 .imgDiv > img {
-    height:450px;
+    height:500px;
     width:100%;
 }
-.content{
+.contentDiv{
     height:600px;
     width:50%;
+    margin-left: 2%;
+    margin-top: -2%;
     float: left;
-    margin-top: 3%;
-    margin-left:2%
-}
-
-.checked{
-    color:red;
 }
 
 .feature_container{
@@ -36,22 +32,21 @@
 }
 .feature{
     float: left;
-    margin-left:5%
+    margin-left: 5%;
 }
-.fetIcon{
+.imgIcon{
     height:100px;
     width:100px;
-    margin-left:2%
+    margin-left: 2%;
 }
+
 h2{
-    color:green;
     font-size:35px;
+    color: green;
 }
 
 .btn{
-    height:50px;
-    width:200px;
-    font-size:20px;
-    color:white;
-    background-color:#a39e9e
+    height: 50px;
+    width: 200px;
+    font-size:20px
 }

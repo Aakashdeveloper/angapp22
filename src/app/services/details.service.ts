@@ -1,21 +1,18 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IRest } from '../Home/rest.model';
+import {Observable} from 'rxjs';
+import {IRest} from '../home/rest.model';
 
 @Injectable()
 
-export class DetailsService {
+export class DetailsService{
+    private detailsUrl = "http://zomatoajulypi.herokuapp.com/details";
+  
 
-    private restUrl = "http://zomatoajulypi.herokuapp.com/details"
-   
     constructor(private http:HttpClient){}
 
-    getDetails(restId:number): Observable<IRest[]>{
-        return this.http.get<IRest[]>(`${this.restUrl}/${restId}`)
+    getDetails(restId:Number): Observable<IRest[]>{
+        return this.http.get<IRest[]>(`${this.detailsUrl}/${restId}`)
     }
-
 }
-
-
 

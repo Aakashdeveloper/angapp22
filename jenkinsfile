@@ -15,7 +15,7 @@ pipeline{
         stage("Deploy"){
             steps{
                 sh "rm -rf /usr/local/var/www/ang-app/dist"
-                sh "cp -R /Users/aakash/.jenkins/workspace/angbuild/dist     /usr/local/var/www/ang-app/dist"
+                sh "cp -R /Users/aakash/.jenkins/workspace/angmay8/dist     /usr/local/var/www/ang-app/dist"
             }
         }
     }
